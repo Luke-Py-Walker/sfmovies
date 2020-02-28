@@ -1,12 +1,15 @@
 language: node_js
 sudo: false
+services:
+  - postgresql
 node_js:
   - 8.11.3
 env:
   - NODE_ENV="test"
 before_script:
-	- yarn db:setup:user
-	- yarn db:reset
+  - yarn db:setup:user
+  - yarn db:reset
 script:
-	- yarn test
-	- yarn lint
+  - yarn test
+  - yarn enforce
+  - yarn lint
