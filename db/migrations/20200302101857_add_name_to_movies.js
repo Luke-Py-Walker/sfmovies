@@ -1,7 +1,8 @@
 'use strict';
-const TABLE = 'movies';
-const NEW_COLUMN = 'name';
-const OLD_COLUMN = 'title';
+
+const NEW_COLUMN  = 'name';
+const OLD_COLUMN  = 'title';
+const TABLE       = 'movies';
 
 exports.up = async (Knex) => {
   await Knex.schema.table(TABLE, (table) => {
